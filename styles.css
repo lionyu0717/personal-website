@@ -6,6 +6,11 @@
 }
 
 :root {
+    /* Font Variables */
+    --heading-font: 'Cinzel Decorative', serif;
+    --body-font-en: 'Times New Roman', serif;
+    --body-font-cn: 'FangSong', '仿宋', serif;
+
     /* Solarized + Festive Color Palette */
     --sol-base03: #002b36;
     --sol-base02: #073642;
@@ -62,6 +67,14 @@ body {
     line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+
+.chinese-text {
+    font-family: var(--body-font-cn);
+}
+
 /* Header Styles */
 header {
     position: fixed;
@@ -107,7 +120,6 @@ main.compact {
 }
 
 .profile-header h1 {
-    font-family: var(--heading-font);
     font-size: 2rem;
     color: var(--text-primary);
     margin: 0;
@@ -172,8 +184,6 @@ nav ul li a.active {
 }
 
 .section h2 {
-    font-family: var(--heading-font);
-    color: var(--text-primary);
     font-size: 2rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -223,8 +233,6 @@ nav ul li a.active {
 }
 
 .project-card h3 {
-    font-family: var(--heading-font);
-    color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -267,7 +275,6 @@ nav ul li a.active {
 }
 
 .skill-category h3 {
-    color: var(--text-primary);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -283,6 +290,81 @@ nav ul li a.active {
     color: var(--accent-secondary);
     position: absolute;
     left: 0;
+}
+
+/* Connect Section */
+.connect-section {
+    text-align: center;
+    padding: 6rem 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.connect-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    letter-spacing: 0.1em;
+}
+
+.connect-text {
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.social-link {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 160px;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.connect-decoration {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--accent-tertiary);
+    border-radius: 2px;
 }
 
 /* Contact Section */
@@ -360,23 +442,25 @@ footer {
     }
 }
 
-/* Add Theme Toggle Button */
+/* Theme Toggle Button */
 .theme-toggle {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    cursor: pointer;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -386,5 +470,5 @@ footer {
 .theme-toggle svg {
     width: 1.5rem;
     height: 1.5rem;
-    fill: var(--text-primary);
+    color: var(--text-primary);
 }
