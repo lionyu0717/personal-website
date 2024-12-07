@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lion YU - Personal Website</title>
+    <meta name="description" content="Lion YU - Independent Developer and English Major at ZJU. Full-stack development, cross-domain integration, and innovative solutions.">
+    <meta name="keywords" content="Lion YU, Full Stack Developer, UI/UX Design, Cross-domain Integration, Portfolio">
+    <meta name="author" content="Lion YU">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Lion YU - Personal Portfolio">
+    <meta property="og:description" content="Independent Developer specializing in full-stack development and cross-domain integration.">
+    <meta property="og:image" content="https://personal-website-beige-two-17.vercel.app/images/profile.jpg">
+    <meta property="og:url" content="https://personal-website-beige-two-17.vercel.app">
+    <meta name="theme-color" content="#fdf6e3">
+    <meta name="color-scheme" content="light dark">
+    
+    <title>Lion YU - Independent Developer & Cross-domain Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Theme Toggle Script -->
+    <script>
+        // Check saved theme preference or system preference
+        const getPreferredTheme = () => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        // Apply theme
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        };
+
+        // Initial theme setup
+        setTheme(getPreferredTheme());
+    </script>
 </head>
 <body>
     <div class="container">
